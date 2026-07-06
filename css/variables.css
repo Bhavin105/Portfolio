@@ -1,0 +1,36 @@
+/* ============================== */
+/* CSS CUSTOM PROPERTIES           */
+/* ============================== */
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.06 0.01 260);
+  --foreground: oklch(0.97 0.005 280);
+  --card: oklch(0.1 0.012 260);
+  --card-foreground: oklch(0.97 0.005 280);
+  --popover: oklch(0.1 0.012 260);
+  --popover-foreground: oklch(0.97 0.005 280);
+  --primary: oklch(0.78 0.19 250);
+  --primary-foreground: oklch(0.06 0.01 260);
+  --secondary: oklch(0.14 0.015 260);
+  --secondary-foreground: oklch(0.97 0.005 280);
+  --muted: oklch(0.12 0.01 260);
+  --muted-foreground: oklch(0.55 0.02 260);
+  --accent: oklch(0.78 0.19 250);
+  --accent-foreground: oklch(0.06 0.01 260);
+  --destructive: oklch(0.6 0.24 27);
+  --destructive-foreground: oklch(0.98 0.005 270);
+  --border: oklch(1 0 0 / 6%);
+  --input: oklch(1 0 0 / 8%);
+  --ring: oklch(0.78 0.19 250);
+  --glow-blue: oklch(0.72 0.18 230);
+  --glow-purple: oklch(0.68 0.18 300);
+  --glow-cyan: oklch(0.72 0.16 190);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+}
