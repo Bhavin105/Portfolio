@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhavin Solanki — Full Stack Web Developer</title>
+  <meta name="description" content="Portfolio of Bhavin Solanki, a Full Stack Web Developer & UI/UX Enthusiast based in Ahmedabad, India, specializing in modern web applications.">
+  <meta name="keywords" content="Full Stack Developer, Web Developer, UI/UX, React, Node.js, JavaScript, Portfolio, Bhavin Solanki">
+  <meta name="author" content="Bhavin Solanki">
+  <meta name="theme-color" content="#2563eb">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bhavin Solanki — Full Stack Web Developer">
+  <meta property="og:description" content="Full Stack Web Developer & UI/UX Enthusiast based in Ahmedabad, India.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bhavinsolanki.dev">
+  <meta property="og:image" content="assets/icons/og-image.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind CSS (CDN) for a few remaining utilities -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          display: ['"Space Grotesk"', 'sans-serif'],
+        },
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            secondary: '#4f46e5',
+            dark: '#050505',
+            surface: '#0a0a0a',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'gradient-x': 'gradientShift 4s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            gradientShift: {
+              '0%, 100%': { backgroundPosition: '0% center' },
+              '50%': { backgroundPosition: '100% center' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background overlays -->
+  <div class="bg-noise"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader__content">
+      <div class="preloader__spinner"></div>
+      <span class="preloader__text">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Toast notifications -->
+  <div id="toast-container"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav reveal" aria-label="Main navigation">
+      <a href="#home" class="nav__logo magnetic">
+        Bhavin<span class="dot">.</span>
+      </a>
+
+      <div class="nav__menu" id="desktop-menu" role="list">
+        <a href="#home" class="nav__link magnetic" role="listitem">Home</a>
+        <a href="#about" class="nav__link magnetic" role="listitem">About</a>
+        <a href="#work" class="nav__link magnetic" role="listitem">Projects</a>
+      </div>
+
+      <div class="nav__actions">
+        <a href="#contact" class="nav__cta magnetic" role="listitem">Contact</a>
+        <button id="mobile-menu-btn" class="hide-desktop magnetic" aria-label="Open menu">
+          <i class="fas fa-bars fa-lg"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <a href="#home" class="mobile-menu__link">Home</a>
+    <a href="#about" class="mobile-menu__link">About</a>
+    <a href="#experience" class="mobile-menu__link">Experience</a>
+    <a href="#skills" class="mobile-menu__link">Skills</a>
+    <a href="#work" class="mobile-menu__link">Projects</a>
+    <a href="#contact" class="mobile-menu__link">Contact</a>
+    <button id="close-menu" class="mobile-menu__close" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero section-spy">
+      <div class="container container--wide">
+        <div class="hero__grid">
+
+          <div class="hero__content">
+            <div class="hero__badge">
+              <span class="hero__badge-dot">
+                <span class="hero__badge-dot-ping"></span>
+                <span class="hero__badge-dot-inner"></span>
+              </span>
+              <span class="hero__badge-text">Open for Opportunities</span>
+            </div>
+
+            <h1 class="hero__heading">
+              <span class="hero__heading-line"><span class="block">Bhavin</span></span>
+              <span class="hero__heading-line"><span class="hero__heading-gradient block">Solanki</span></span>
+              <span class="hero__heading-line"><span class="block">Developer.</span></span>
+            </h1>
+
+            <p class="hero__description">
+              I build fast, responsive, and user-focused web applications with modern technologies. 
+              Passionate about creating clean interfaces, solving real-world problems, and continuously 
+              improving my development skills.
+            </p>
+
+            <div class="hero__buttons">
+              <a href="#work" class="hero__btn-primary magnetic">
+                <span>View My Work</span>
+                <span class="hero__btn-primary-fill"></span>
+              </a>
+              <a href="#contact" class="hero__btn-secondary magnetic" aria-label="Scroll to Contact">
+                <i class="fas fa-arrow-down"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__visual">
+            <div class="hero__visual-glow"></div>
+            <div class="hero__circle-outer"></div>
+            <div class="hero__circle-middle"></div>
+            <div class="hero__profile magnetic">
+              <img src="assets/icons/1.jpeg" alt="Bhavin Solanki" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about section section--border section-spy">
+      <div class="container container--wide">
+        <h2 class="section-title reveal">About Me <span class="dot">.</span></h2>
+
+        <div class="about__grid" style="margin-top: 3rem;">
+
+          <!-- Bio -->
+          <div class="card card--light card--bio reveal">
+            <div class="card__spotlight" style="z-index:20;position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(37,99,235,0.1),transparent 40%)"></div>
+            <div class="card__content card__padding-lg">
+              <div class="card__header">
+                <span class="card__icon-box"><i class="fas fa-user"></i></span>
+                <h3 class="card__title">Who I Am</h3>
+              </div>
+              <p class="card__text">
+                I'm currently pursuing a Bachelor of Computer Applications at Silver Oak University. 
+                I enjoy designing and developing modern web applications that combine functionality with clean user experiences.
+              </p>
+              <p class="card__text">
+                My interests include frontend development, backend technologies, UI/UX design, and creating responsive digital experiences. 
+                I'm always exploring new tools, frameworks, and best practices to become a better full stack developer.
+              </p>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="card card--gradient card--education reveal reveal-delay-100">
+            <div class="card__spotlight" style="z-index:20;position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(255,255,255,0.15),transparent 40%)"></div>
+            <i class="fas fa-graduation-cap card__icon-float"></i>
+            <div class="card__content card__padding-lg h-full flex flex-col justify-between">
+              <div>
+                <span class="card__icon-box"><i class="fas fa-graduation-cap"></i></span>
+                <h3 class="card__title" style="font-size:1.5rem;margin-top:1.25rem;margin-bottom:0.25rem;">BCA</h3>
+                <p class="card__subtitle">Bachelor of Computer Applications</p>
+              </div>
+              <div class="card__divider" style="margin-top:auto;">
+                <p class="card__institution">Silver Oak University</p>
+                <p class="card__meta">2024 – Present · Ahmedabad, Gujarat</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="card card--dark card--location reveal reveal-delay-200">
+            <div class="card__spotlight" style="z-index:20;position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(255,255,255,0.08),transparent 40%)"></div>
+            <div class="card__glow"></div>
+            <div class="card__content card__padding-lg h-full flex flex-col justify-between">
+              <div>
+                <span class="card__icon-box"><i class="fas fa-location-dot"></i></span>
+                <h3 class="card__title" style="font-size:1.25rem;margin-top:1.25rem;margin-bottom:0.25rem;">Based in</h3>
+                <p class="card__text">Ahmedabad, Gujarat, India</p>
+              </div>
+              <div style="margin-top:1.5rem;">
+                <p class="card__time-label">Local Time</p>
+                <p id="local-time" class="card__time">00:00</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="card card--light card--social reveal reveal-delay-300">
+            <div class="card__spotlight" style="z-index:20;position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(37,99,235,0.1),transparent 40%)"></div>
+            <div class="card__content card__padding-lg h-full flex flex-col justify-between">
+              <span class="status-badge">
+                <span class="status-badge__dot"></span>Open for Opportunities
+              </span>
+              <div style="margin-top:1.5rem;">
+                <p class="card__connect-text">Let's connect</p>
+                <div class="social-links">
+                  <a href="https://github.com/Bhavin105" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/bhavinsolanki10" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                  <a href="mailto:solanki.bhavin.in@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech Marquee -->
+          <div class="card card--muted card--marquee reveal reveal-delay-400">
+            <div class="card__spotlight" style="z-index:20;position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(37,99,235,0.1),transparent 40%)"></div>
+            <div class="bg-grid" style="position:absolute;inset:0;opacity:0.1;pointer-events:none;"></div>
+            <div class="card__content card__padding-lg" style="position:relative;z-index:10;">
+              <h3 class="marquee__title">Tech Stack</h3>
+              <p class="marquee__subtitle">Tools I use daily</p>
+            </div>
+            <div class="marquee__track">
+              <div class="marquee__content">
+                <span class="marquee__text">HTML CSS JAVASCRIPT REACT NODEJS EXPRESSJS MONGODB GIT GITHUB VSCODE</span>
+                <span class="marquee__text">HTML CSS JAVASCRIPT REACT NODEJS EXPRESSJS MONGODB GIT GITHUB VSCODE</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="experience section section--dark section-spy">
+      <div class="container container--medium">
+        <h2 class="section-title section-title--center reveal">Experience <span class="dot">.</span></h2>
+
+        <div class="timeline reveal" style="margin-top:4rem;">
+          <article class="timeline__item">
+            <span class="timeline__dot"></span>
+            <div class="timeline__header">
+              <h3 class="timeline__role">BCA Student</h3>
+              <span class="timeline__badge">2024 – 2027 Pursuing</span>
+            </div>
+            <p class="timeline__company">Silver Oak University</p>
+            <p class="timeline__description">
+              Currently learning modern web development and building personal projects focused on frontend, backend, and UI/UX.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills section section-spy">
+      <div class="container container--wide">
+        <header class="skills__header reveal">
+          <h2 class="section-title">Skills <span class="dot">.</span></h2>
+          <p class="skills__subtitle">Technologies and tools I work with to build modern web applications.</p>
+        </header>
+
+        <div class="skills__grid skills__grid--top">
+          <!-- Frontend -->
+          <div class="card card--light skill-group reveal card__padding-md">
+            <div class="card__spotlight" style="z-index:20;position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(37,99,235,0.1),transparent 40%)"></div>
+            <div class="card__content">
+              <div class="skill-group__header">
+                <span class="skill-group__icon"><i class="fas fa-code"></i></span>
+                <h3 class="skill-group__name">Frontend</h3>
+              </div>
+              <div class="skill-group__chips">
+                <span class="skill-chip">HTML5</span>
+                <span class="skill-chip">CSS3</span>
+                <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">React</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="card card--light skill-group reveal reveal-delay-100 card__padding-md">
+            <div class="card__spotlight" style="z-index:20;position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(37,99,235,0.1),transparent 40%)"></div>
+            <div class="card__content">
+              <div class="skill-group__header">
+                <span class="skill-group__icon"><i class="fas fa-server"></i></span>
+                <h3 class="skill-group__name">Backend</h3>
+              </div>
+              <div class="skill-group__chips">
+                <span class="skill-chip">Node.js</span>
+                <span class="skill-chip">Express.js</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="card card--light skill-group reveal reveal-delay-200 card__padding-md">
+            <div class="card__spotlight" style="z-index:20;position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(37,99,235,0.1),transparent 40%)"></div>
+            <div class="card__content">
+              <div class="skill-group__header">
+                <span class="skill-group__icon"><i class="fas fa-database"></i></span>
+                <h3 class="skill-group__name">Database</h3>
+              </div>
+              <div class="skill-group__chips">
+                <span class="skill-chip">MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills__grid skills__grid--bottom">
+          <!-- Tools -->
+          <div class="card card--light skill-group reveal card__padding-md">
+            <div class="card__spotlight" style="z-index:20;position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(37,99,235,0.1),transparent 40%)"></div>
+            <div class="card__content">
+              <div class="skill-group__header">
+                <span class="skill-group__icon"><i class="fas fa-tools"></i></span>
+                <h3 class="skill-group__name">Tools</h3>
+              </div>
+              <div class="skill-group__chips">
+                <span class="skill-chip">Git</span>
+                <span class="skill-chip">GitHub</span>
+                <span class="skill-chip">VS Code</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other -->
+          <div class="card card--light skill-group reveal reveal-delay-100 card__padding-md">
+            <div class="card__spotlight" style="z-index:20;position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(37,99,235,0.1),transparent 40%)"></div>
+            <div class="card__content">
+              <div class="skill-group__header">
+                <span class="skill-group__icon"><i class="fas fa-paint-brush"></i></span>
+                <h3 class="skill-group__name">Other</h3>
+              </div>
+              <div class="skill-group__chips">
+                <span class="skill-chip">Responsive Web Design</span>
+                <span class="skill-chip">REST APIs</span>
+                <span class="skill-chip">UI/UX Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="work" class="projects section section-spy">
+      <div class="container container--wide">
+        <header class="projects__header reveal">
+          <h2 class="section-title">Projects<br>Selected<span class="dot">.</span></h2>
+          <p class="projects__description">A showcase of my work — from concept to deployment.</p>
+        </header>
+
+        <div class="projects__grid" id="projects-grid">
+          <!-- Portfolio Website -->
+          <article class="project-card card project-trigger reveal"
+                   data-filter-category="web"
+                   data-title="Portfolio Website"
+                   data-category="Personal Portfolio"
+                   data-image="assets/images/projects/portfolio.png"
+                   data-desc="A premium responsive portfolio website showcasing my projects, skills, experience, and development journey with modern animations and a clean dark theme.">
+            <div class="card__spotlight" style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(37,99,235,0.1),transparent 40%);z-index:20;"></div>
+            <div class="project-card__image-wrap">
+              <div class="project-card__image-inner">
+                <img src="assets/images/projects/portfolio.png"
+                     loading="lazy"
+                     width="1200" height="900"
+                     class="project-card__image parallax-img"
+                     alt="Portfolio Website screenshot">
+                <div class="project-card__overlay"></div>
+              </div>
+            </div>
+            <div class="project-card__info">
+              <div>
+                <h3 class="project-card__name">Portfolio Website</h3>
+                <p class="project-card__category">Personal Portfolio</p>
+              </div>
+              <span class="project-card__expand"><i class="fas fa-plus"></i></span>
+            </div>
+          </article>
+
+          <!-- Smart Inventory & Billing System -->
+          <article class="project-card card project-trigger reveal reveal-delay-100"
+                   data-filter-category="fullstack"
+                   data-title="Smart Inventory & Billing System"
+                   data-category="Full Stack Web Application"
+                   data-image="assets/images/projects/inventory.png"
+                   data-desc="An inventory and billing management system featuring product management, billing, and invoice generation with a clean, responsive interface.">
+            <div class="card__spotlight" style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(600px circle at var(--mouse-x,50%) var(--mouse-y,50%),rgba(37,99,235,0.1),transparent 40%);z-index:20;"></div>
+            <div class="project-card__image-wrap">
+              <div class="project-card__image-inner">
+                <img src="assets/images/projects/inventory.png"
+                     loading="lazy"
+                     width="1200" height="900"
+                     class="project-card__image parallax-img"
+                     alt="Smart Inventory & Billing System screenshot">
+                <div class="project-card__overlay"></div>
+              </div>
+            </div>
+            <div class="project-card__info">
+              <div>
+                <h3 class="project-card__name">Smart Inventory &amp; Billing</h3>
+                <p class="project-card__category">Full Stack Web Application</p>
+              </div>
+              <span class="project-card__expand"><i class="fas fa-plus"></i></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact section--dark section-spy">
+      <div class="bg-grid" style="position:absolute;inset:0;opacity:0.3;pointer-events:none;"></div>
+      <div class="container container--medium" style="position:relative;z-index:10;">
+        <div class="contact__grid">
+          <div class="contact__info">
+            <h2 class="contact__heading reveal">
+              Let's build something together.<br>
+              <span class="gradient-text">Get in touch.</span>
+            </h2>
+            <p class="contact__text reveal reveal-delay-100">
+              Have a project in mind or just want to say hello? I'm always open to new opportunities and conversations.
+            </p>
+            <div class="contact__details reveal reveal-delay-200">
+              <div class="contact__detail-item">
+                <i class="fas fa-envelope"></i>
+                <span>solanki.bhavin.in@gmail.com</span>
+              </div>
+              <div class="contact__detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Ahmedabad, Gujarat, India</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form reveal reveal-delay-300">
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input id="name" type="text" class="form-input magnetic" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" type="email" class="form-input magnetic" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" rows="4" class="form-input form-textarea magnetic" placeholder="Tell me about your project..." required></textarea>
+              </div>
+              <button type="submit" class="form-btn magnetic">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <footer class="footer reveal">
+          <div class="footer__social">
+            <a href="mailto:solanki.bhavin.in@gmail.com" class="footer__social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/Bhavin105" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/bhavinsolanki10" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+          <div>&copy; <span id="year">2025</span> Bhavin Solanki. All rights reserved.</div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Modal -->
+  <div id="project-modal">
+    <div class="modal__backdrop" id="modal-backdrop"></div>
+    <div class="modal__container">
+      <div class="modal__content" id="modal-content">
+        <div class="relative">
+          <button id="close-modal" class="modal__close" aria-label="Close modal">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="modal__image-wrap">
+            <img id="modal-image" src="" class="modal__image" alt="Project screenshot">
+          </div>
+          <div class="modal__body">
+            <div class="modal__header">
+              <div>
+                <span id="modal-category" class="modal__category">Category</span>
+                <h2 id="modal-title" class="modal__title">Project Title</h2>
+              </div>
+              <a href="#" class="modal__visit-btn">
+                Visit Website <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+            <div class="modal__details">
+              <div>
+                <h3 class="modal__desc-title">About the Project</h3>
+                <p id="modal-desc" class="modal__desc">Description is here.</p>
+              </div>
+              <div style="space-y: 1.5rem;">
+                <div style="margin-bottom:1.5rem;">
+                  <h4 class="modal__meta-title">Technology</h4>
+                  <div class="modal__tech">
+                    <span class="modal__tech-tag">React</span>
+                    <span class="modal__tech-tag">Tailwind</span>
+                    <span class="modal__tech-tag">JavaScript</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="modal__meta-title">Year</h4>
+                  <p class="modal__year">2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top -->
+  <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
