@@ -22,25 +22,6 @@ function updateLocalTime() {
   });
 }
 
-/* ===== Dark Mode ===== */
-function initTheme() {
-  const toggle = document.getElementById('theme-toggle');
-  const root = document.documentElement;
-  const isDark = localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-  if (isDark) { root.classList.add('dark'); toggle.innerHTML = '<i class="fas fa-sun"></i>'; }
-  else { toggle.innerHTML = '<i class="fas fa-moon"></i>'; }
-
-  toggle.addEventListener('click', () => {
-    root.classList.toggle('dark');
-    const dark = root.classList.contains('dark');
-    localStorage.theme = dark ? 'dark' : 'light';
-    toggle.innerHTML = dark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-  });
-}
-initTheme();
-
 /* ===== Mobile Menu ===== */
 function initMobileMenu() {
   const menu = document.getElementById('mobile-menu');
